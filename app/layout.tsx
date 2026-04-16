@@ -8,7 +8,35 @@ const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: '게딱지 - 게스트하우스 딱, 지금!',
-  description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 전 세계 유니크한 게스트하우스를 찾고 예약하세요.',
+  description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
+  keywords: ['게딱지', '게스트하우스', '게스트하우스 어플', '게스트하우스 딱, 지금!', '게하 플랫폼', '제주 게스트하우스', '소규모 게하', '포틀럭 파티', '파티 게하', '국내 여행', '제주도 게스트하우스', 'Ddakji', 'Guesthouse'],
+  authors: [{ name: '게딱지(Ddakji)' }],
+  creator: '게딱지',
+  publisher: '게딱지',
+  openGraph: {
+    title: '게딱지 - 게스트하우스 딱, 지금!',
+    description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
+    url: 'https://ddakji.kr',
+    siteName: '게딱지(Ddakji)',
+    locale: 'ko_KR',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: '게딱지 - 게스트하우스 딱, 지금!',
+    description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   generator: 'v0.app',
 }
 
