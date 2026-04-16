@@ -20,16 +20,16 @@ const features = [
   // },
   {
     icon: CheckCircle,
-    title: "직접 검증한 숙소",
-    description: "모든 게스트하우스를 직접 방문해 확인하고, 신뢰할 수 있는 곳만 소개합니다.",
+    title: "게딱지 인증 숙소",
+    description: "직접 방문해 검증한, 믿고 머물 수 있는 게스트하우스만 소개합니다",
     className: "bg-muted/40 dark:bg-muted/10",
     imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
     imageUrl: "/images/recommend.svg",
   },
   {
     icon: PartyPopper,
-    title: "게스트하우스 파티 탐색",
-    description: "각 게스트하우스에서 열리는 파티 정보를 한눈에 보고, 원하는 파티를 선택할 수 있습니다.",
+    title: "게스트하우스 콘텐츠 탐색",
+    description: "게스트하우스의 다양한 파티와 이벤트를 한눈에 확인하고 참여해보세요",
     className: "bg-muted/40 dark:bg-muted/10",
     imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
     imageUrl: "/images/contents.svg",
@@ -41,11 +41,11 @@ export function FeaturesSection() {
     <section id="features" className="bg-muted/30 py-16 md:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
+        <div className="mb-10 md:mb-12 text-center">
+          <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl font-bold text-foreground md:text-4xl text-balance">
             왜 게딱지인가요?
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
+          <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground px-4">
             게스트하우스를 찾는 여행자를 위해 설계된 플랫폼으로 더 재밌고, 편안한 여행을 경험하세요
           </p>
         </div>
@@ -59,24 +59,24 @@ export function FeaturesSection() {
             return (
               <div
                 key={index}
-                className={`relative z-10 group flex flex-col items-center gap-12 lg:gap-16 ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} ${index > 0 ? '-mt-4 lg:-mt-12' : ''}`}
+                className={`relative z-10 group flex flex-col items-center gap-8 md:gap-12 lg:gap-16 ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} ${index > 0 ? '-mt-4 lg:-mt-12' : ''}`}
               >
                 {/* Text Area */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
-                  <div className="mb-6 inline-flex h-16 w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary mx-auto lg:mx-0 shadow-sm border border-primary/20">
-                    <feature.icon className="h-8 w-8" />
+                  <div className="mb-6 inline-flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-2xl bg-primary/10 text-primary mx-auto lg:mx-0 shadow-sm border border-primary/20">
+                    <feature.icon className="h-6 w-6 md:h-8 md:w-8" />
                   </div>
-                  <h3 className="mb-4 text-3xl md:text-4xl font-bold tracking-tight text-foreground">
+                  <h3 className="mb-2 md:mb-4 text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-foreground">
                     {feature.title}
                   </h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0">
+                  <p className="text-sm sm:text-base md:text-lg text-muted-foreground leading-relaxed max-w-lg mx-auto lg:mx-0 whitespace-pre-line px-4 lg:px-0">
                     {feature.description}
                   </p>
                 </div>
 
                 {/* Smartphone App Screen Mockup Area */}
                 <div className={`w-full lg:w-1/2 flex justify-center ${isReversed ? 'lg:justify-start' : 'lg:justify-end'} px-4 lg:px-0`}>
-                  <div className="relative flex items-center justify-center w-full max-w-[250px]">
+                  <div className="relative flex items-center justify-center w-full max-w-[200px] md:max-w-[250px]">
                     {/* Decorative Background Blob */}
                     <div className={`absolute inset-0 scale-[1.5] blur-3xl rounded-full opacity-60 ${feature.imageBg.replace('bg-gradient-to-t', 'bg-gradient-to-tr')}`} />
 

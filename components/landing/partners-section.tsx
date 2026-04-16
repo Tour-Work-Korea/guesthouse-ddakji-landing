@@ -53,7 +53,7 @@ export function PartnersSection() {
   }, [])
 
   return (
-    <section className="border-y border-border bg-card py-16 md:py-20 overflow-hidden">
+    <section id="partners" className="border-y border-border bg-card py-16 md:py-20 overflow-hidden">
       <div className="container mx-auto px-4 lg:px-8 mb-6">
         <p className="text-center text-base md:text-lg font-medium text-muted-foreground">
           게딱지와 함께하는 게스트하우스

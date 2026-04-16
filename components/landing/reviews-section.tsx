@@ -23,11 +23,11 @@ const reviews = [
   },
   {
     id: 3,
-    name: "이하늘",
+    name: "박진경",
     avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop",
     location: "20대 여성",
     rating: 5,
-    text: "스탭 구하려고 항상 네이버 카페만 봤었는데 게딱지에서도 지원할 수 있어서 훨씬 편했어요. 한 곳에서 다 해결되는 느낌이에요.",
+    text: "혼자 여행와서 처음엔 조금 어색했는데, 게스트하우스에서 만난 사람들과 금방 친해질 수 있었어요.각자 살아온 얘기와 생각, 가치관을 자연스럽게 나누면서 단순히 함께 놀고 지나가는 인연이 아니라, '친구'를 사귈 수 있었고 혼자였지만 전혀 혼자가 아닌 여행이었습니다.",
     date: "2024년 1월",
   },
 ]
@@ -37,44 +37,44 @@ export function ReviewsSection() {
     <section id="reviews" className="py-16 md:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="mb-12 text-center">
-          <h2 className="mb-4 text-3xl font-bold text-foreground md:text-4xl">
-            여행자들의 이야기
+        <div className="mb-10 md:mb-12 text-center">
+          <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl font-bold text-foreground text-balance md:text-4xl">
+            게딱지에서 <br className="block sm:hidden" />시작된 이야기들
           </h2>
-          <p className="mx-auto max-w-2xl text-muted-foreground">
-            실제 여행자들이 전하는 생생한 경험담을 확인하세요
+          <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground px-4">
+            여행자들이 직접 남긴 진짜 경험을 만나보세요
           </p>
         </div>
 
         {/* Reviews Grid */}
-        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+        <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
           {reviews.map((review) => (
             <Card key={review.id} className="border-border bg-card">
-              <CardContent className="p-6">
+              <CardContent className="p-5 sm:p-6">
                 {/* Quote Icon */}
-                <Quote className="mb-4 h-8 w-8 text-primary/20" />
+                <Quote className="mb-3 sm:mb-4 h-6 w-6 sm:h-8 sm:w-8 text-primary/20" />
 
                 {/* Rating */}
-                <div className="mb-4 flex gap-1">
+                <div className="mb-3 sm:mb-4 flex gap-1">
                   {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="h-4 w-4 fill-accent text-accent" />
+                    <Star key={i} className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-accent text-accent" />
                   ))}
                 </div>
 
                 {/* Review Text */}
-                <p className="mb-6 text-muted-foreground leading-relaxed">
+                <p className="mb-5 sm:mb-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
                   {`"${review.text}"`}
                 </p>
 
                 {/* Author */}
                 <div className="flex items-center gap-3">
-                  <Avatar className="h-10 w-10">
+                  <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
                     <AvatarImage src={review.avatar} alt={review.name} />
                     <AvatarFallback>{review.name[0]}</AvatarFallback>
                   </Avatar>
                   <div>
-                    <div className="font-medium text-foreground">{review.name}</div>
-                    <div className="text-sm text-muted-foreground">{review.location}</div>
+                    <div className="text-sm font-medium text-foreground">{review.name}</div>
+                    <div className="text-xs sm:text-sm text-muted-foreground">{review.location}</div>
                   </div>
                 </div>
               </CardContent>

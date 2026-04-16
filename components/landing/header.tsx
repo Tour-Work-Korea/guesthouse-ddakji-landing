@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import { HostRegistrationModal } from "./host-registration-modal"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -15,12 +16,13 @@ export function Header() {
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center">
-            <Image 
-              src="/images/logo.png" 
-              alt="게딱지 로고" 
-              width={32} 
-              height={32}
-              style={{ width: 'auto', height: '32px' }}
+            <Image
+              src="/images/logo.png"
+              alt="게딱지 로고"
+              width={160}
+              height={40}
+              className="h-7 md:h-8 w-auto object-contain"
+              priority
             />
           </Link>
 
@@ -32,16 +34,18 @@ export function Header() {
             <Link href="#reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
               이용 후기
             </Link>
-            <Link href="#download" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
-              앱 다운로드
+            <Link href="#partners" className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors">
+              파트너
             </Link>
           </div>
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center">
-            <Button size="sm" asChild>
-              <Link href="#hosts">입점 문의</Link>
-            </Button>
+            <HostRegistrationModal>
+              <Button size="sm">
+                입점 문의
+              </Button>
+            </HostRegistrationModal>
           </div>
 
           {/* Mobile Menu Button */}
@@ -63,13 +67,15 @@ export function Header() {
               <Link href="#reviews" className="text-sm font-medium text-muted-foreground hover:text-foreground">
                 이용 후기
               </Link>
-              <Link href="#download" className="text-sm font-medium text-muted-foreground hover:text-foreground">
-                앱 다운로드
+              <Link href="#partners" className="text-sm font-medium text-muted-foreground hover:text-foreground">
+                파트너
               </Link>
               <div className="pt-4 border-t border-border">
-                <Button size="sm" className="w-full" asChild>
-                  <Link href="#hosts">입점 문의</Link>
-                </Button>
+                <HostRegistrationModal>
+                  <Button size="sm" className="w-full">
+                    입점 문의
+                  </Button>
+                </HostRegistrationModal>
               </div>
             </div>
           </div>
