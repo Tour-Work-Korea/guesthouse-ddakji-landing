@@ -16,88 +16,30 @@ export default async function Image() {
   const logoData = fs.readFileSync(filePath);
   const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
 
-  // 가장 모던하고 세련된 스타트업 폰트 (Pretendard Bold) 불러오기
-  const fontData = await fetch(
-    'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/public/static/Pretendard-Bold.otf'
-  ).then((res) => res.arrayBuffer());
-
   return new ImageResponse(
     (
       <div
         style={{
-          background: 'linear-gradient(135deg, #FFF3ED 0%, #FFE4D6 100%)', // Soft orange/peach gradient
+          backgroundColor: '#FFFFFF',
           width: '100%',
           height: '100%',
           display: 'flex',
-          flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: '"Pretendard"', // 불러온 폰트 적용
         }}
       >
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            justifyContent: 'center',
-            backgroundColor: 'rgba(255, 255, 255, 0.95)',
-            padding: '80px 100px',
-            borderRadius: '48px',
-            boxShadow: '0 30px 60px rgba(0,0,0,0.08)',
-            border: '1px solid rgba(255,255,255,0.5)'
-          }}
-        >
-          {/* Logo Image */}
-          <img 
-            src={logoBase64} 
-            style={{ 
-              height: '100px',
-              objectFit: 'contain',
-              marginBottom: '40px',
-            }} 
-          />
-
-          {/* Main Headline */}
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              fontSize: '84px',
-              color: '#111827',
-              textAlign: 'center',
-              lineHeight: 1.2,
-              letterSpacing: '-0.02em',
-            }}
-          >
-            <span>게스트하우스 딱, 지금!</span>
-          </div>
-
-          {/* Subheadline */}
-          <div
-            style={{
-              display: 'flex',
-              fontSize: '42px',
-              color: '#FF6B00',
-              marginTop: '40px',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            게스트하우스 특화 플랫폼
-          </div>
-        </div>
+        {/* Logo Image */}
+        <img 
+          src={logoBase64} 
+          style={{ 
+            height: '200px', // 넓은 흰 바탕을 꽉 채우도록 좀 더 큼직하게
+            objectFit: 'contain',
+          }} 
+        />
       </div>
     ),
     {
       ...size,
-      fonts: [
-        {
-          name: 'Pretendard',
-          data: fontData,
-          style: 'normal',
-        },
-      ],
     }
   )
 }
