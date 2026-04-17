@@ -41,6 +41,23 @@ export default function Home() {
           })
         }}
       />
+      <Script
+        id="schema-organization"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "게딱지(Ddakji)",
+            "url": "https://ddakji.kr",
+            "sameAs": [
+              "https://www.instagram.com/guesthouse_ddakji/",
+              "https://apps.apple.com/kr/app/%EA%B2%8C%EB%94%B1%EC%A7%80-%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%94%B1-%EC%A7%80%EA%B8%88/id6746732522",
+              "https://play.google.com/store/apps/details?id=com.triofrontendapp"
+            ]
+          })
+        }}
+      />
     </div>
   )
 }
