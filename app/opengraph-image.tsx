@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
-
-export const runtime = 'edge'
+import fs from 'fs'
+import path from 'path'
 
 export const alt = '게딱지 - 게스트하우스 딱, 지금!'
 export const size = {
@@ -11,6 +11,16 @@ export const size = {
 export const contentType = 'image/png'
 
 export default async function Image() {
+  // 로고 일러스트 읽기
+  const filePath = path.join(process.cwd(), 'public', 'images', 'logo.png');
+  const logoData = fs.readFileSync(filePath);
+  const logoBase64 = `data:image/png;base64,${logoData.toString('base64')}`;
+
+  // 가장 모던하고 세련된 스타트업 폰트 (Pretendard Bold) 불러오기
+  const fontData = await fetch(
+    'https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/packages/pretendard/dist/public/static/Pretendard-Bold.otf'
+  ).then((res) => res.arrayBuffer());
+
   return new ImageResponse(
     (
       <div
@@ -22,7 +32,7 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: 'sans-serif',
+          fontFamily: '"Noto Sans KR"', // 불러온 폰트 적용
         }}
       >
         <div
@@ -38,23 +48,15 @@ export default async function Image() {
             border: '1px solid rgba(255,255,255,0.5)'
           }}
         >
-          {/* Logo Badge */}
-          <div
-            style={{
-              display: 'flex',
-              alignItems: 'center',
-              backgroundColor: '#FF6B00', // Strong orange primary
-              color: 'white',
-              padding: '12px 32px',
-              borderRadius: '999px',
-              fontSize: '32px',
-              fontWeight: 800,
+          {/* Logo Image */}
+          <img 
+            src={logoBase64} 
+            style={{ 
+              height: '100px',
+              objectFit: 'contain',
               marginBottom: '40px',
-              letterSpacing: '-0.02em',
-            }}
-          >
-            게딱지
-          </div>
+            }} 
+          />
 
           {/* Main Headline */}
           <div
@@ -62,36 +64,40 @@ export default async function Image() {
               display: 'flex',
               flexDirection: 'column',
               alignItems: 'center',
-              fontSize: '76px',
-              fontWeight: 900,
+              fontSize: '84px',
               color: '#111827',
               textAlign: 'center',
-              lineHeight: 1.25,
-              letterSpacing: '-0.05em',
+              lineHeight: 1.2,
+              letterSpacing: '-0.02em',
             }}
           >
-            <span>단순한 숙박이 아닌,</span>
-            <span style={{ color: '#FF6B00', marginTop: '8px' }}>사람을 만나는 시작점</span>
+            <span>게스트하우스 딱, 지금!</span>
           </div>
 
           {/* Subheadline */}
           <div
             style={{
               display: 'flex',
-              fontSize: '36px',
-              color: '#6B7280',
-              marginTop: '48px',
-              fontWeight: 600,
+              fontSize: '42px',
+              color: '#FF6B00',
+              marginTop: '40px',
               letterSpacing: '-0.02em',
             }}
           >
-            게스트하우스 추천 및 예약 특화 플랫폼
+            게스트하우스 특화 플랫폼
           </div>
         </div>
       </div>
     ),
     {
       ...size,
+      fonts: [
+        {
+          name: 'Pretendard',
+          data: fontData,
+          style: 'normal',
+        },
+      ],
     }
   )
 }
