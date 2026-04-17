@@ -32,7 +32,7 @@ export default async function Image() {
           flexDirection: 'column',
           alignItems: 'center',
           justifyContent: 'center',
-          fontFamily: '"Noto Sans KR"', // 불러온 폰트 적용
+          fontFamily: '"Pretendard"', // 불러온 폰트 적용
         }}
       >
         <div
