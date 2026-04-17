@@ -28,11 +28,10 @@ export default async function Image() {
           justifyContent: 'center',
         }}
       >
-        {/* Logo Image */}
         <img 
           src={logoBase64} 
           style={{ 
-            height: '200px', // 넓은 흰 바탕을 꽉 채우도록 좀 더 큼직하게
+            height: '340px', // 화면을 꽉 채울 수 있게 압도적으로 크게!
             objectFit: 'contain',
           }} 
         />
