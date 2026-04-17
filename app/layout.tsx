@@ -7,6 +7,10 @@ const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://ddakji.kr'),
+  alternates: {
+    canonical: '/',
+  },
   title: '게딱지 - 게스트하우스 딱, 지금!',
   description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
   keywords: ['게딱지', '게스트하우스', '게스트하우스 어플', '게스트하우스 딱, 지금!', '게하 플랫폼', '제주 게스트하우스', '소규모 게하', '포틀럭 파티', '파티 게하', '국내 여행', '제주도 게스트하우스', 'Ddakji', 'Guesthouse'],
