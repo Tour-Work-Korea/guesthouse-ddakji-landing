@@ -56,39 +56,39 @@ export function HostRegistrationModal({ children }: { children: React.ReactNode 
         {step === "selection" && (
           <div className="flex flex-col gap-6 pt-2">
             <DialogHeader>
-              <DialogTitle className="text-2xl text-center">어떤 방법으로 입점을 도와드릴까요?</DialogTitle>
-              <DialogDescription className="text-center text-base mt-2">
+              <DialogTitle className="text-xl sm:text-2xl text-center">어떤 방법으로 입점을 도와드릴까요?</DialogTitle>
+              <DialogDescription className="text-center text-sm sm:text-base mt-2">
                 편하신 방법을 선택해 주시면 빠르게 안내해 드릴게요.
               </DialogDescription>
             </DialogHeader>
 
-            <div className="grid gap-4 sm:grid-cols-2 mt-4">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 mt-2 sm:mt-4">
               {/* Online Form Card */}
               <button
                 onClick={() => setStep("online_form")}
-                className="flex flex-col items-center justify-center p-6 gap-4 rounded-xl border-2 border-border/50 bg-card hover:border-primary/50 hover:bg-primary/5 transition-all text-left"
+                className="flex flex-col items-center justify-center p-4 sm:p-6 gap-3 sm:gap-4 rounded-xl border-2 border-border/50 bg-card hover:border-primary/50 hover:bg-primary/5 transition-all text-center"
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
-                  <FileText className="w-6 h-6" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+                  <FileText className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div className="text-center">
-                  <h3 className="font-semibold text-lg text-foreground">온라인 신청</h3>
-                  <p className="text-sm text-muted-foreground mt-1">간단한 정보 입력으로<br />빠르게 신청하기</p>
+                  <h3 className="font-semibold text-base sm:text-lg text-foreground">온라인 신청</h3>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1 break-keep">간단한 정보 입력으로<br className="hidden sm:block" /> 빠르게 신청하기</p>
                 </div>
               </button>
 
               {/* Phone Call Card */}
               <a 
                 href="tel:010-6627-2653"
-                className="flex flex-col items-center justify-center p-6 gap-4 rounded-xl border-2 border-border/50 bg-card hover:border-primary/50 hover:bg-primary/5 transition-all text-center group cursor-pointer"
+                className="flex flex-col items-center justify-center p-4 sm:p-6 gap-3 sm:gap-4 rounded-xl border-2 border-border/50 bg-card hover:border-primary/50 hover:bg-primary/5 transition-all text-center group cursor-pointer"
               >
-                <div className="w-12 h-12 rounded-full bg-muted group-hover:bg-primary/10 flex items-center justify-center text-muted-foreground group-hover:text-primary transition-colors">
-                  <PhoneCall className="w-6 h-6" />
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-muted group-hover:bg-primary/10 flex items-center justify-center text-muted-foreground group-hover:text-primary transition-colors">
+                  <PhoneCall className="w-5 h-5 sm:w-6 sm:h-6" />
                 </div>
                 <div>
-                  <h3 className="font-semibold text-lg text-foreground">전화 상담</h3>
-                  <p className="text-sm text-foreground font-semibold mt-1">010-6627-2653</p>
-                  <p className="text-xs text-muted-foreground mt-1">평일 10:00 - 18:00</p>
+                  <h3 className="font-semibold text-base sm:text-lg text-foreground">전화 상담</h3>
+                  <p className="text-xs sm:text-sm text-foreground font-semibold mt-1">010-6627-2653</p>
+                  <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">평일 10:00 - 18:00</p>
                 </div>
               </a>
             </div>
