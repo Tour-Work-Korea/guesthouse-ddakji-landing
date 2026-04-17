@@ -10,6 +10,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    // 추가적인 페이지가 있다면 여기에 배열 객체로 추가할 수 있습니다.
+    {
+      url: `${baseUrl}/terms`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
+    {
+      url: `${baseUrl}/privacy`,
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.5,
+    },
   ]
 }

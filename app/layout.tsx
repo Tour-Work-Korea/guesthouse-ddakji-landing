@@ -46,6 +46,11 @@ export const metadata: Metadata = {
       'naver-site-verification': '339dcc5f74b939065ed47a8c631b70b6733d12b7',
     },
   },
+  icons: {
+    icon: '/icon.svg',
+    shortcut: '/icon.svg',
+    apple: '/apple-icon.png',
+  },
   generator: 'v0.app',
 }
 
