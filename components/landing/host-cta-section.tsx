@@ -86,12 +86,14 @@ export function HostCtaSection() {
               </p>
 
               <div className="flex flex-row gap-2 sm:gap-4 mt-auto">
-                <Button variant="outline" className="h-12 md:h-14 w-full flex-1 justify-center sm:justify-start px-2 sm:px-4 gap-1.5 md:gap-3 hover:bg-primary/5 hover:text-primary hover:border-primary/50 transition-all border-border/80">
-                  <Apple className="w-5 h-5 md:w-6 md:h-6" />
-                  <div className="flex flex-col items-start text-left">
-                    <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-semibold opacity-70 leading-none">Download</span>
-                    <span className="text-xs md:text-sm font-bold leading-tight">App Store</span>
-                  </div>
+                <Button variant="outline" className="h-12 md:h-14 w-full flex-1 justify-center sm:justify-start px-2 sm:px-4 gap-1.5 md:gap-3 hover:bg-primary/5 hover:text-primary hover:border-primary/50 transition-all border-border/80" asChild>
+                  <a href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%94%B1%EC%A7%80-%ED%8C%8C%ED%8A%B8%EB%84%88%EC%84%BC%ED%84%B0/id6761244097" target="_blank" rel="noopener noreferrer">
+                    <Apple className="w-5 h-5 md:w-6 md:h-6" />
+                    <div className="flex flex-col items-start text-left">
+                      <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-semibold opacity-70 leading-none">Download</span>
+                      <span className="text-xs md:text-sm font-bold leading-tight">App Store</span>
+                    </div>
+                  </a>
                 </Button>
                 <Button variant="outline" className="h-12 md:h-14 w-full flex-1 justify-center sm:justify-start px-2 sm:px-4 gap-1.5 md:gap-3 hover:bg-primary/5 hover:text-primary hover:border-primary/50 transition-all border-border/80">
                   <Play className="w-5 h-5 md:w-6 md:h-6" />
