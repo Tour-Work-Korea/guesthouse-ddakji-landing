@@ -3,6 +3,7 @@
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Apple, Play } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 export function HeroSection() {
   return (
@@ -38,7 +39,7 @@ export function HeroSection() {
           {/* App Download Buttons */}
           <div className="flex flex-row items-center justify-center gap-2 sm:gap-3 mb-12">
             <Button size="lg" className="h-12 md:h-14 px-3 md:px-6 text-sm md:text-base gap-1.5 md:gap-3 w-full max-w-[160px] sm:max-w-none sm:w-auto" asChild>
-              <a href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%94%B1%EC%A7%80-%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%94%B1-%EC%A7%80%EA%B8%88/id6746732522" target="_blank" rel="noopener noreferrer">
+              <a href="https://apps.apple.com/kr/app/%EA%B2%8C%EB%94%B1%EC%A7%80-%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%94%B1-%EC%A7%80%EA%B8%88/id6746732522" target="_blank" rel="noopener noreferrer" onClick={() => track("Download_AppStore")}>
                 <Apple className="h-5 w-5 md:h-6 md:w-6" />
                 <div className="flex flex-col items-start">
                   <span className="text-[9px] md:text-[10px] opacity-80 leading-none">Download on the</span>
@@ -47,7 +48,7 @@ export function HeroSection() {
               </a>
             </Button>
             <Button size="lg" variant="outline" className="h-12 md:h-14 px-3 md:px-6 text-sm md:text-base gap-1.5 md:gap-3 w-full max-w-[160px] sm:max-w-none sm:w-auto bg-card" asChild>
-              <a href="https://play.google.com/store/apps/details?id=com.triofrontendapp" target="_blank" rel="noopener noreferrer">
+              <a href="https://play.google.com/store/apps/details?id=com.triofrontendapp" target="_blank" rel="noopener noreferrer" onClick={() => track("Download_GooglePlay")}>
                 <Play className="h-5 w-5 md:h-6 md:w-6 fill-current" />
                 <div className="flex flex-col items-start">
                   <span className="text-[9px] md:text-[10px] opacity-80 leading-none">GET IT ON</span>

@@ -1,18 +1,25 @@
 "use client"
 
 import { useEffect, useRef } from "react"
+import Image from "next/image"
 
 const partners = [
-  "서점숙소",
-  "점보네 게스트하우스",
-  "리틀포레스트",
-  "제철주택",
-  "노마드인제주",
-  "소담소담",
-  "131 게스트하우스",
-  "이호웨이브",
-  "히든스테이",
-  "524 게스트하우스"
+  { name: "서점숙소", image: "/images/partners/seojeom.jpg" },
+  { name: "점보네 게스트하우스", image: "/images/partners/jumbo.jpg" },
+  { name: "리틀포레스트", image: "/images/partners/littleforest.jpg" },
+  { name: "제철주택", image: "/images/partners/jecheol.jpg" },
+  { name: "노마드인제주", image: "/images/partners/nomad.jpg" },
+  { name: "소담소담", image: "/images/partners/sodam.jpg" },
+  { name: "131 게스트하우스", image: "/images/partners/131.jpg" },
+  { name: "이호웨이브", image: "/images/partners/ihowave.jpg" },
+  { name: "히든스테이", image: "/images/partners/hiddenstay.jpg" },
+  { name: "524 게스트하우스", image: "/images/partners/524.jpg" },
+  { name: "협재옹포리", image: "/images/partners/hyeopjae.jpg" },
+  { name: "제주공항 가까운", image: "/images/partners/jejuairport.jpg" },
+  { name: "구구호스텔", image: "/images/partners/gugu.jpg" },
+  { name: "미조 게스트하우스", image: "/images/partners/mijo.jpg" },
+  { name: "김녕기억", image: "/images/partners/gimnyeong.jpg" },
+  { name: "백패커스홈", image: "/images/partners/backpackers.jpg" }
 ]
 
 export function PartnersSection() {
@@ -71,14 +78,15 @@ export function PartnersSection() {
             className="group flex-shrink-0 flex items-center gap-3 px-2 py-2 pr-6 rounded-full bg-white dark:bg-card text-foreground font-medium text-sm md:text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default border border-border/50 shadow-sm hover:shadow-md hover:-translate-y-0.5"
           >
             <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-muted overflow-hidden flex-shrink-0 border border-border transition-transform duration-300 group-hover:scale-110 shadow-sm">
-              <img
-                src={`https://picsum.photos/seed/${encodeURIComponent(partner)}/100/100`}
-                alt={`${partner} 로고`}
+              <Image
+                src={partner.image}
+                alt={`${partner.name} 로고`}
+                width={80}
+                height={80}
                 className="w-full h-full object-cover"
-                loading="lazy"
               />
             </div>
-            <span>{partner}</span>
+            <span>{partner.name}</span>
           </div>
         ))}
       </div>

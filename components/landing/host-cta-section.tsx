@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button"
 import { CheckCircle2, Smartphone, Apple, Play } from "lucide-react"
 import { HostRegistrationModal } from "@/components/landing/host-registration-modal"
+import Image from "next/image"
 
 const benefits = [
   "예약부터 정산까지 한 번에 관리",
@@ -51,10 +52,10 @@ export function HostCtaSection() {
               <div className="flex items-center gap-1.5 sm:gap-3 shrink-0">
                 <div className="flex -space-x-2 sm:-space-x-3">
                   <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full ring-2 ring-white dark:ring-background bg-muted overflow-hidden shadow-sm">
-                    <img src="https://picsum.photos/seed/p1/100/100" alt="파트너" className="w-full h-full object-cover" loading="lazy" />
+                    <Image src="https://picsum.photos/seed/p1/100/100" alt="파트너" width={80} height={80} className="w-full h-full object-cover" />
                   </div>
                   <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full ring-2 ring-white dark:ring-background bg-muted overflow-hidden shadow-sm">
-                    <img src="https://picsum.photos/seed/p2/100/100" alt="파트너" className="w-full h-full object-cover" loading="lazy" />
+                    <Image src="https://picsum.photos/seed/p2/100/100" alt="파트너" width={80} height={80} className="w-full h-full object-cover" />
                   </div>
                   <div className="w-7 h-7 sm:w-9 sm:h-9 rounded-full ring-2 ring-white dark:ring-background bg-primary/10 flex items-center justify-center text-[10px] sm:text-xs font-bold text-primary shadow-sm">
                     +
@@ -74,7 +75,7 @@ export function HostCtaSection() {
 
             <div className="relative z-10 flex flex-col h-full">
               <div className="w-16 h-16 rounded-2xl bg-white border border-border/50 shadow-sm flex items-center justify-center mb-6 overflow-hidden">
-                <img src="/images/ddakji-partner-logo.jpg" alt="파트너센터 로고" className="w-full h-full object-contain p-1" />
+                <Image src="/images/ddakji-partner-logo.jpg" alt="파트너센터 로고" width={128} height={128} className="w-full h-full object-contain p-1" />
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-foreground mb-4 tracking-tight">
                 게딱지 파트너센터

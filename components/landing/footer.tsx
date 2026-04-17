@@ -2,17 +2,12 @@ import Link from "next/link"
 import Image from "next/image"
 
 const footerLinks = {
-  서비스: [
-    { label: "앱 다운로드", href: "#" },
-    { label: "호스트 등록", href: "#" },
-  ],
   고객지원: [
-    { label: "자주 묻는 질문", href: "#" },
-    { label: "문의하기", href: "#" },
+    { label: "문의하기", href: "http://pf.kakao.com/_iLxiRX", external: true },
   ],
   약관: [
-    { label: "이용약관", href: "#" },
-    { label: "개인정보처리방침", href: "#" },
+    { label: "이용약관", href: "/terms" },
+    { label: "개인정보처리방침", href: "/privacy" },
   ],
 }
 
@@ -50,6 +45,7 @@ export function Footer() {
                     <li key={link.label}>
                       <Link
                         href={link.href}
+                        {...(link.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                         className="text-sm text-muted-foreground hover:text-foreground transition-colors whitespace-nowrap"
                       >
                         {link.label}
@@ -66,10 +62,6 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-8 md:flex-row">
           <div className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-muted-foreground">
             <span>© 2025 게딱지. All rights reserved.</span>
-            <span className="hidden md:inline">·</span>
-            <Link href="#" className="hover:text-foreground">개인정보 처리방침</Link>
-            <span className="hidden md:inline">·</span>
-            <Link href="#" className="hover:text-foreground">이용약관</Link>
           </div>
 
           {/* Social Links */}
