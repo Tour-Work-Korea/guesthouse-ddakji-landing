@@ -41,6 +41,11 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
+  verification: {
+    other: {
+      'naver-site-verification': '339dcc5f74b939065ed47a8c631b70b6733d12b7',
+    },
+  },
   generator: 'v0.app',
 }
 
