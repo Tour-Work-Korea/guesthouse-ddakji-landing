@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const partners = [
   { name: "서점숙소", image: "/images/partners/seojeom.jpg" },
@@ -60,36 +61,44 @@ export function PartnersSection() {
   }, [])
 
   return (
-    <section id="partners" className="border-y border-border bg-card py-16 md:py-20 overflow-hidden">
-      <div className="container mx-auto px-4 lg:px-8 mb-6">
-        <p className="text-center text-base md:text-lg font-medium text-muted-foreground">
-          게딱지와 함께하는 게스트하우스
-        </p>
-      </div>
-
-      <div
-        ref={scrollRef}
-        className="flex gap-8 overflow-hidden whitespace-nowrap"
+    <section id="partners" className="border-y border-border bg-card overflow-hidden">
+      <motion.div 
+        className="py-16 md:py-20"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-50px" }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
       >
-        {/* 두 번 반복해서 무한 스크롤 효과 */}
-        {[...partners, ...partners].map((partner, index) => (
-          <div
-            key={index}
-            className="group flex-shrink-0 flex items-center gap-3 px-2 py-2 pr-6 rounded-full bg-white dark:bg-card text-foreground font-medium text-sm md:text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default border border-border/50 shadow-sm hover:shadow-md hover:-translate-y-0.5"
-          >
-            <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-muted overflow-hidden flex-shrink-0 border border-border transition-transform duration-300 group-hover:scale-110 shadow-sm">
-              <Image
-                src={partner.image}
-                alt={`${partner.name} 로고`}
-                width={80}
-                height={80}
-                className="w-full h-full object-cover"
-              />
+        <div className="container mx-auto px-4 lg:px-8 mb-6">
+          <p className="text-center text-base md:text-lg font-medium text-muted-foreground">
+            게딱지와 함께하는 게스트하우스
+          </p>
+        </div>
+
+        <div
+          ref={scrollRef}
+          className="flex gap-8 overflow-hidden whitespace-nowrap"
+        >
+          {/* 두 번 반복해서 무한 스크롤 효과 */}
+          {[...partners, ...partners].map((partner, index) => (
+            <div
+              key={index}
+              className="group flex-shrink-0 flex items-center gap-3 px-2 py-2 pr-6 rounded-full bg-white dark:bg-card text-foreground font-medium text-sm md:text-base hover:bg-primary hover:text-primary-foreground transition-all duration-300 cursor-default border border-border/50 shadow-sm hover:shadow-md hover:-translate-y-0.5"
+            >
+              <div className="w-9 h-9 md:w-10 h-10 rounded-full bg-muted overflow-hidden flex-shrink-0 border border-border transition-transform duration-300 group-hover:scale-110 shadow-sm">
+                <Image
+                  src={partner.image}
+                  alt={`${partner.name} 로고`}
+                  width={80}
+                  height={80}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <span>{partner.name}</span>
             </div>
-            <span>{partner.name}</span>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      </motion.div>
     </section>
   )
 }

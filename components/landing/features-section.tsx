@@ -1,5 +1,8 @@
+"use client"
+
 import { Search, Filter, CheckCircle, PartyPopper } from "lucide-react"
 import Image from "next/image"
+import { motion } from "framer-motion"
 
 const features = [
   {
@@ -10,14 +13,6 @@ const features = [
     imageBg: "bg-gradient-to-t from-primary/15 to-transparent dark:from-primary/20",
     imageUrl: "/images/guesthouse.png",
   },
-  // {
-  //   icon: Filter,
-  //   title: "분위기별로 찾기",
-  //   description: "조용한 휴식부터 파티 중심까지, 원하는 분위기의 게스트하우스를 쉽게 찾을 수 있습니다.",
-  //   className: "bg-muted/40 dark:bg-muted/10",
-  //   imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
-  //   // imageUrl: "/images/your-screenshot2.png", // 주석 슬래시(//)를 지우고 경로를 넣으세요!
-  // },
   {
     icon: CheckCircle,
     title: "게딱지 인증 숙소",
@@ -41,14 +36,20 @@ export function FeaturesSection() {
     <section id="features" className="bg-muted/30 py-16 md:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="mb-10 md:mb-12 text-center">
+        <motion.div 
+          className="mb-10 md:mb-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl font-bold text-foreground md:text-4xl text-balance">
             왜 게딱지인가요?
           </h2>
           <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground px-4">
             게스트하우스를 찾는 여행자를 위해 설계된 플랫폼으로 더 재밌고, 편안한 여행을 경험하세요
           </p>
-        </div>
+        </motion.div>
 
         {/* Features Vertical Layout */}
         <div className="flex flex-col gap-16 lg:gap-20 max-w-5xl mx-auto mt-16 md:mt-24 pb-8">
@@ -57,9 +58,13 @@ export function FeaturesSection() {
             const isReversed = index % 2 !== 0;
 
             return (
-              <div
+              <motion.div
                 key={index}
                 className={`relative z-10 group flex flex-col items-center gap-8 md:gap-12 lg:gap-16 ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} ${index > 0 ? '-mt-4 lg:-mt-12' : ''}`}
+                initial={{ opacity: 0, y: 60 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-100px" }}
+                transition={{ duration: 0.8, ease: "easeOut", delay: index * 0.1 }}
               >
                 {/* Text Area */}
                 <div className="w-full lg:w-1/2 flex flex-col justify-center text-center lg:text-left">
@@ -104,7 +109,7 @@ export function FeaturesSection() {
                     </div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
         </div>

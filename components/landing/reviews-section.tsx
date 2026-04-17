@@ -1,6 +1,9 @@
+"use client"
+
 import { Card, CardContent } from "@/components/ui/card"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { Star, Quote } from "lucide-react"
+import { motion } from "framer-motion"
 
 const reviews = [
   {
@@ -37,48 +40,62 @@ export function ReviewsSection() {
     <section id="reviews" className="py-16 md:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <div className="mb-10 md:mb-12 text-center">
+        <motion.div 
+          className="mb-10 md:mb-12 text-center"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-50px" }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+        >
           <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl font-bold text-foreground text-balance md:text-4xl">
             게딱지에서 <br className="block sm:hidden" />시작된 이야기들
           </h2>
           <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground px-4">
             여행자들이 직접 남긴 진짜 경험을 만나보세요
           </p>
-        </div>
+        </motion.div>
 
         {/* Reviews Grid */}
         <div className="grid gap-4 sm:gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {reviews.map((review) => (
-            <Card key={review.id} className="border-border bg-card">
-              <CardContent className="p-5 sm:p-6">
-                {/* Quote Icon */}
-                <Quote className="mb-3 sm:mb-4 h-6 w-6 sm:h-8 sm:w-8 text-primary/20" />
+          {reviews.map((review, index) => (
+            <motion.div
+              key={review.id}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.6, ease: "easeOut", delay: index * 0.15 }}
+            >
+              <Card className="border-border bg-card h-full hover:-translate-y-1 transition-transform duration-300">
+                <CardContent className="p-5 sm:p-6 flex flex-col h-full">
+                  {/* Quote Icon */}
+                  <Quote className="mb-3 sm:mb-4 h-6 w-6 sm:h-8 sm:w-8 text-primary/20" />
 
-                {/* Rating */}
-                <div className="mb-3 sm:mb-4 flex gap-1">
-                  {Array.from({ length: review.rating }).map((_, i) => (
-                    <Star key={i} className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-accent text-accent" />
-                  ))}
-                </div>
-
-                {/* Review Text */}
-                <p className="mb-5 sm:mb-6 text-sm sm:text-base text-muted-foreground leading-relaxed">
-                  {`"${review.text}"`}
-                </p>
-
-                {/* Author */}
-                <div className="flex items-center gap-3">
-                  <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
-                    <AvatarImage src={review.avatar} alt={review.name} />
-                    <AvatarFallback>{review.name[0]}</AvatarFallback>
-                  </Avatar>
-                  <div>
-                    <div className="text-sm font-medium text-foreground">{review.name}</div>
-                    <div className="text-xs sm:text-sm text-muted-foreground">{review.location}</div>
+                  {/* Rating */}
+                  <div className="mb-3 sm:mb-4 flex gap-1">
+                    {Array.from({ length: review.rating }).map((_, i) => (
+                      <Star key={i} className="h-3.5 w-3.5 sm:h-4 sm:w-4 fill-accent text-accent" />
+                    ))}
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+
+                  {/* Review Text */}
+                  <p className="mb-5 sm:mb-6 text-sm sm:text-base text-muted-foreground leading-relaxed flex-1">
+                    {`"${review.text}"`}
+                  </p>
+
+                  {/* Author */}
+                  <div className="flex items-center gap-3">
+                    <Avatar className="h-8 w-8 sm:h-10 sm:w-10">
+                      <AvatarImage src={review.avatar} alt={review.name} />
+                      <AvatarFallback>{review.name[0]}</AvatarFallback>
+                    </Avatar>
+                    <div>
+                      <div className="text-sm font-medium text-foreground">{review.name}</div>
+                      <div className="text-xs sm:text-sm text-muted-foreground">{review.location}</div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </motion.div>
           ))}
         </div>
       </div>
