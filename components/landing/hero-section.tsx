@@ -14,7 +14,7 @@ export function HeroSection() {
 
       <div className="container relative mx-auto px-4 lg:px-8">
         {/* Content - Centered */}
-        <motion.div 
+        <motion.div
           className="text-center max-w-3xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
@@ -37,9 +37,8 @@ export function HeroSection() {
           </h1>
 
           {/* Subheadline */}
-          <p className="mb-8 mx-auto max-w-xl text-pretty text-base sm:text-lg text-muted-foreground md:text-xl">
-            게스트하우스 딱, 지금! 게딱지 추천 게스트하우스에서
-            새로운 인연을 만나고, 진정한 여행의 의미를 발견하세요.
+          <p className="mb-8 mx-auto max-w-xl text-pretty break-keep text-sm sm:text-base text-muted-foreground md:text-lg">
+            게스트하우스 딱, 지금! 게딱지 추천 게스트하우스에서<br className="sm:hidden" /> 새로운 인연을 만나고,<br className="hidden sm:block" /> 진정한 여행의 의미를 발견하세요!
           </p>
 
           {/* App Download Buttons */}
@@ -66,7 +65,7 @@ export function HeroSection() {
         </motion.div>
 
         {/* Phone Mockup - Centered at Bottom */}
-        <motion.div 
+        <motion.div
           className="relative flex justify-center"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -76,7 +75,7 @@ export function HeroSection() {
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 bg-primary/10 rounded-full blur-3xl animate-pulse" />
 
           {/* Floating Phone Wrapper */}
-          <motion.div 
+          <motion.div
             className="relative"
             animate={{ y: [0, -12, 0] }}
             transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
@@ -88,7 +87,7 @@ export function HeroSection() {
                 <div className="absolute top-2 md:top-3 left-1/2 -translate-x-1/2 z-20 h-5 w-20 md:h-6 md:w-24 bg-gray-900 rounded-full" />
                 {/* Screen */}
                 <Image
-                  src="/images/recommend.svg"
+                  src="/images/home.svg"
                   alt="게딱지 앱 화면"
                   width={300}
                   height={650}

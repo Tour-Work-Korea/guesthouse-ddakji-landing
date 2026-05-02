@@ -40,7 +40,7 @@ export function ReviewsSection() {
     <section id="reviews" className="py-16 md:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="mb-10 md:mb-12 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -51,7 +51,7 @@ export function ReviewsSection() {
             게딱지에서 <br className="block sm:hidden" />시작된 이야기들
           </h2>
           <p className="mx-auto max-w-2xl text-sm sm:text-base text-muted-foreground px-4">
-            여행자들이 직접 남긴 진짜 경험을 만나보세요
+            여행자들이 직접 남긴 진짜 경험을 만나보세요!
           </p>
         </motion.div>
 

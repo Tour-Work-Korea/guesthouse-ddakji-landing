@@ -1,5 +1,5 @@
 const stats = [
-  { value: "45+", label: "제주 파트너 게스트하우스" },
+  { value: "35+", label: "제주 파트너 게스트하우스" },
   { value: "15+", label: "제주 주요 지역" },
   { value: "1,000+", label: "누적 예약" },
   { value: "4.9", label: "평균 만족도" },

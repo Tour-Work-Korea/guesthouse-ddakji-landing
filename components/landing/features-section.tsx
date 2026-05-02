@@ -8,7 +8,7 @@ const features = [
   {
     icon: Search,
     title: "게스트하우스만 모아서",
-    description: "흩어져 있던 게스트하우스를 한 곳에 모아, 더 이상 여러 플랫폼을 헤매지 않아도 됩니다.",
+    description: <>흩어져 있던 게스트하우스를 한 곳에 모아,<br />더 이상 여러 플랫폼을 헤매지 않아도 됩니다</>,
     className: "bg-primary/5 dark:bg-primary/10",
     imageBg: "bg-gradient-to-t from-primary/15 to-transparent dark:from-primary/20",
     imageUrl: "/images/guesthouse.png",
@@ -16,15 +16,15 @@ const features = [
   {
     icon: CheckCircle,
     title: "게딱지 인증 숙소",
-    description: "직접 방문해 검증한, 믿고 머물 수 있는 게스트하우스만 소개합니다",
+    description: <>직접 방문해 검증한, 믿고 머물 수 있는 <br className="sm:hidden" />게스트하우스만 소개합니다</>,
     className: "bg-muted/40 dark:bg-muted/10",
     imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
-    imageUrl: "/images/recommend.svg",
+    imageUrl: "/images/home.svg",
   },
   {
     icon: PartyPopper,
     title: "게스트하우스 콘텐츠 탐색",
-    description: "게스트하우스의 다양한 파티와 이벤트를 한눈에 확인하고 참여해보세요",
+    description: <>게스트하우스의 다양한 파티와 이벤트를 <br className="sm:hidden" />한눈에 확인하고<br className="hidden sm:block" />참여해보세요</>,
     className: "bg-muted/40 dark:bg-muted/10",
     imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
     imageUrl: "/images/contents.svg",
@@ -36,7 +36,7 @@ export function FeaturesSection() {
     <section id="features" className="bg-muted/30 py-16 md:py-24">
       <div className="container mx-auto px-4 lg:px-8">
         {/* Section Header */}
-        <motion.div 
+        <motion.div
           className="mb-10 md:mb-12 text-center"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
