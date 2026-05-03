@@ -46,6 +46,17 @@ export const metadata: Metadata = {
       'naver-site-verification': '339dcc5f74b939065ed47a8c631b70b6733d12b7',
     },
   },
+  appLinks: {
+    ios: {
+      url: 'ddakji://',
+      app_store_id: '6746732522',
+      app_name: '게딱지',
+    },
+    android: {
+      package: 'com.triofrontendapp',
+      app_name: '게딱지',
+    },
+  },
   icons: {
     icon: '/favicon.svg',
     shortcut: '/favicon.svg',
