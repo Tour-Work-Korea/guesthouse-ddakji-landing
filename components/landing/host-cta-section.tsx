@@ -1,11 +1,9 @@
 "use client"
 
-import React, { useState } from "react"
+import React from "react"
 import { Button } from "@/components/ui/button"
-import { CheckCircle2, Smartphone, Apple, Play, X, AlertCircle } from "lucide-react"
-import { HostRegistrationModal } from "@/components/landing/host-registration-modal"
+import { CheckCircle2, Apple, Play } from "lucide-react"
 import Image from "next/image"
-import { motion, AnimatePresence } from "framer-motion"
 
 const benefits = [
   "예약부터 정산까지 한 번에 관리",
@@ -15,7 +13,6 @@ const benefits = [
 ]
 
 export function HostCtaSection() {
-  const [isModalOpen, setIsModalOpen] = useState(false)
 
   return (
     <section id="hosts" className="bg-[#E3EBFF]/30 py-16 md:py-24 border-t border-border/40">
@@ -104,60 +101,19 @@ export function HostCtaSection() {
                     </div>
                   </a>
                 </Button>
-                <Button variant="outline" className="h-12 md:h-14 w-full flex-1 justify-center sm:justify-start px-2 sm:px-4 gap-1.5 md:gap-3 hover:bg-[#E3EBFF]/50 hover:text-[#4351EC] hover:border-[#4351EC]/50 transition-all border-border/80" onClick={() => setIsModalOpen(true)}>
-                  <Play className="w-5 h-5 md:w-6 md:h-6" />
-                  <div className="flex flex-col items-start text-left">
-                    <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-semibold opacity-70 leading-none">Coming Soon</span>
-                    <span className="text-xs md:text-sm font-bold leading-tight">Google Play</span>
-                  </div>
+                <Button variant="outline" className="h-12 md:h-14 w-full flex-1 justify-center sm:justify-start px-2 sm:px-4 gap-1.5 md:gap-3 hover:bg-[#E3EBFF]/50 hover:text-[#4351EC] hover:border-[#4351EC]/50 transition-all border-border/80" asChild>
+                  <a href="https://play.google.com/store/apps/details?id=com.ddakjihostapp" target="_blank" rel="noopener noreferrer">
+                    <Play className="w-5 h-5 md:w-6 md:h-6" />
+                    <div className="flex flex-col items-start text-left">
+                      <span className="text-[9px] md:text-[10px] uppercase tracking-wider font-semibold opacity-70 leading-none">Download</span>
+                      <span className="text-xs md:text-sm font-bold leading-tight">Google Play</span>
+                    </div>
+                  </a>
                 </Button>
               </div>
               </div>
             </div>
 
-            {/* Coming Soon Modal */}
-            <AnimatePresence>
-              {isModalOpen && (
-                <>
-                  <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    onClick={() => setIsModalOpen(false)}
-                    className="fixed inset-0 z-[100] bg-black/40 backdrop-blur-sm"
-                  />
-                  <motion.div
-                    initial={{ opacity: 0, scale: 0.95, x: "-50%", y: "-40%" }}
-                    animate={{ opacity: 1, scale: 1, x: "-50%", y: "-50%" }}
-                    exit={{ opacity: 0, scale: 0.95, x: "-50%", y: "-40%" }}
-                    className="fixed top-1/2 left-1/2 z-[101] w-[90%] max-w-sm bg-background border border-border/50 shadow-2xl rounded-[2rem] p-6 outline-none"
-                  >
-                    <button
-                      onClick={() => setIsModalOpen(false)}
-                      className="absolute top-5 right-5 text-muted-foreground hover:text-foreground transition-colors p-1"
-                    >
-                      <X className="w-5 h-5" />
-                    </button>
-                    <div className="flex flex-col items-center text-center mt-2">
-                      <div className="w-14 h-14 bg-[#4351EC]/10 rounded-[1.2rem] flex items-center justify-center mb-5 border border-[#4351EC]/20 shadow-sm">
-                        <AlertCircle className="w-7 h-7 text-[#4351EC]" />
-                      </div>
-                      <h3 className="text-xl font-bold text-foreground mb-3">출시 준비 중입니다</h3>
-                      <p className="text-sm text-muted-foreground mb-6 leading-relaxed">
-                        안드로이드 앱은 현재 출시 준비 중입니다.<br />
-                        최대한 빠르게 플레이 스토어에서 뵙겠습니다!
-                      </p>
-                      <Button
-                        className="w-full rounded-xl h-12 bg-[#4351EC] text-white hover:bg-[#4351EC]/90 font-bold text-base shadow-md shadow-[#4351EC]/20"
-                        onClick={() => setIsModalOpen(false)}
-                      >
-                        확인
-                      </Button>
-                    </div>
-                  </motion.div>
-                </>
-              )}
-            </AnimatePresence>
           </div>
         </div>
     </section>
