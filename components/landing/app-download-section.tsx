@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { assetPath } from "@/lib/site"
 
 export function AppDownloadSection() {
   return (
@@ -58,7 +59,7 @@ export function AppDownloadSection() {
                 <div className="rounded-[2.5rem] bg-foreground p-3 shadow-2xl">
                   <div className="h-[400px] w-[200px] rounded-[2rem] bg-gradient-to-b from-primary/90 to-primary flex flex-col items-center justify-center text-primary-foreground">
                     <Image
-                      src="/images/logo.png"
+                      src={assetPath("/images/logo.png")}
                       alt="게딱지 로고"
                       width={80}
                       height={80}

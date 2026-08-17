@@ -4,3 +4,4 @@ out/
 
 # node
 node_modules/
+*.tsbuildinfo

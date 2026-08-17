@@ -7,6 +7,7 @@ import { StatsSection } from "@/components/landing/stats-section"
 import { ReviewsSection } from "@/components/landing/reviews-section"
 import { HostCtaSection } from "@/components/landing/host-cta-section"
 import { Footer } from "@/components/landing/footer"
+import { SITE_URL } from "@/lib/site"
 
 export default function Home() {
   return (
@@ -37,7 +38,7 @@ export default function Home() {
               "priceCurrency": "KRW"
             },
             "description": "게스트하우스 딱, 지금! 단순한 숙박이 아닌 사람을 만나는 시작점. 전 세계 유니크한 파티 게스트하우스를 찾고 예약하세요.",
-            "url": "https://ddakji.kr"
+            "url": SITE_URL
           })
         }}
       />
@@ -49,8 +50,8 @@ export default function Home() {
             "@context": "https://schema.org",
             "@type": "Organization",
             "name": "게딱지(Ddakji)",
-            "url": "https://ddakji.kr",
-            "logo": "https://ddakji.kr/icon.svg",
+            "url": SITE_URL,
+            "logo": `${SITE_URL}/icon.svg`,
             "sameAs": [
               "https://www.instagram.com/guesthouse_ddakji/",
               "https://apps.apple.com/kr/app/%EA%B2%8C%EB%94%B1%EC%A7%80-%EA%B2%8C%EC%8A%A4%ED%8A%B8%ED%95%98%EC%9A%B0%EC%8A%A4-%EB%94%B1-%EC%A7%80%EA%B8%88/id6746732522",
@@ -69,27 +70,27 @@ export default function Home() {
               {
                 "@type": "SiteNavigationElement",
                 "name": "서비스 소개",
-                "url": "https://ddakji.kr/#features"
+                "url": `${SITE_URL}/#features`
               },
               {
                 "@type": "SiteNavigationElement",
                 "name": "이용 후기",
-                "url": "https://ddakji.kr/#reviews"
+                "url": `${SITE_URL}/#reviews`
               },
               {
                 "@type": "SiteNavigationElement",
                 "name": "게딱지 파트너",
-                "url": "https://ddakji.kr/#partners"
+                "url": `${SITE_URL}/#partners`
               },
               {
                 "@type": "SiteNavigationElement",
                 "name": "이용약관",
-                "url": "https://ddakji.kr/terms"
+                "url": `${SITE_URL}/terms`
               },
               {
                 "@type": "SiteNavigationElement",
                 "name": "개인정보처리방침",
-                "url": "https://ddakji.kr/privacy"
+                "url": `${SITE_URL}/privacy`
               }
             ]
           })
