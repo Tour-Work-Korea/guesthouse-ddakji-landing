@@ -3,24 +3,25 @@
 import { useEffect, useRef } from "react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { assetPath } from "@/lib/site"
 
 const partners = [
-  { name: "서점숙소", image: "/images/partners/seojeom.jpg" },
-  { name: "점보네 게스트하우스", image: "/images/partners/jumbo.jpg" },
-  { name: "리틀포레스트", image: "/images/partners/littleforest.jpg" },
-  { name: "제철주택", image: "/images/partners/jecheol.jpg" },
-  { name: "노마드인제주", image: "/images/partners/nomad.jpg" },
-  { name: "소담소담", image: "/images/partners/sodam.jpg" },
-  { name: "131 게스트하우스", image: "/images/partners/131.jpg" },
-  { name: "이호웨이브", image: "/images/partners/ihowave.jpg" },
-  { name: "히든스테이", image: "/images/partners/hiddenstay.jpg" },
-  { name: "524 게스트하우스", image: "/images/partners/524.jpg" },
-  { name: "협재옹포리", image: "/images/partners/hyeopjae.jpg" },
-  { name: "제주공항 가까운", image: "/images/partners/jejuairport.jpg" },
-  { name: "구구호스텔", image: "/images/partners/gugu.jpg" },
-  { name: "미조 게스트하우스", image: "/images/partners/mijo.jpg" },
-  { name: "김녕기억", image: "/images/partners/gimnyeong.jpg" },
-  { name: "백패커스홈", image: "/images/partners/backpackers.jpg" }
+  { name: "서점숙소", image: assetPath("/images/partners/seojeom.jpg") },
+  { name: "점보네 게스트하우스", image: assetPath("/images/partners/jumbo.jpg") },
+  { name: "리틀포레스트", image: assetPath("/images/partners/littleforest.jpg") },
+  { name: "제철주택", image: assetPath("/images/partners/jecheol.jpg") },
+  { name: "노마드인제주", image: assetPath("/images/partners/nomad.jpg") },
+  { name: "소담소담", image: assetPath("/images/partners/sodam.jpg") },
+  { name: "131 게스트하우스", image: assetPath("/images/partners/131.jpg") },
+  { name: "이호웨이브", image: assetPath("/images/partners/ihowave.jpg") },
+  { name: "히든스테이", image: assetPath("/images/partners/hiddenstay.jpg") },
+  { name: "524 게스트하우스", image: assetPath("/images/partners/524.jpg") },
+  { name: "협재옹포리", image: assetPath("/images/partners/hyeopjae.jpg") },
+  { name: "제주공항 가까운", image: assetPath("/images/partners/jejuairport.jpg") },
+  { name: "구구호스텔", image: assetPath("/images/partners/gugu.jpg") },
+  { name: "미조 게스트하우스", image: assetPath("/images/partners/mijo.jpg") },
+  { name: "김녕기억", image: assetPath("/images/partners/gimnyeong.jpg") },
+  { name: "백패커스홈", image: assetPath("/images/partners/backpackers.jpg") }
 ]
 
 export function PartnersSection() {

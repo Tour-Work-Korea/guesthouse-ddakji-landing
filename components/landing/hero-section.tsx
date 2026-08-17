@@ -4,6 +4,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Apple, Play } from "lucide-react"
 import { track } from "@vercel/analytics"
+import { assetPath } from "@/lib/site"
 import { motion } from "framer-motion"
 
 export function HeroSection() {
@@ -87,7 +88,7 @@ export function HeroSection() {
                 <div className="absolute top-2 md:top-3 left-1/2 -translate-x-1/2 z-20 h-5 w-20 md:h-6 md:w-24 bg-gray-900 rounded-full" />
                 {/* Screen */}
                 <Image
-                  src="/images/home.svg"
+                  src={assetPath("/images/home.svg")}
                   alt="게딱지 앱 화면"
                   width={300}
                   height={650}

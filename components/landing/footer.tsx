@@ -1,7 +1,14 @@
 import Link from "next/link"
 import Image from "next/image"
+import { assetPath } from "@/lib/site"
 
-const footerLinks = {
+type FooterLink = {
+  label: string
+  href: string
+  external?: boolean
+}
+
+const footerLinks: Record<string, FooterLink[]> = {
   비즈니스: [
     { label: "파트너센터", href: "https://host.ddakji.kr", external: true },
     { label: "호스트 입점 문의", href: "http://pf.kakao.com/_iLxiRX", external: true },
@@ -26,7 +33,7 @@ export function Footer() {
           <div className="lg:w-1/2">
             <Link href="/" className="flex items-center gap-2 mb-6 w-fit">
               <Image
-                src="/images/logo.png"
+                src={assetPath("/images/logo.png")}
                 alt="게딱지 로고"
                 width={36}
                 height={36}

@@ -3,6 +3,7 @@
 import { Search, Filter, CheckCircle, PartyPopper } from "lucide-react"
 import Image from "next/image"
 import { motion } from "framer-motion"
+import { assetPath } from "@/lib/site"
 
 const features = [
   {
@@ -11,7 +12,7 @@ const features = [
     description: <>흩어져 있던 게스트하우스를 한 곳에 모아,<br />더 이상 여러 플랫폼을 헤매지 않아도 됩니다</>,
     className: "bg-primary/5 dark:bg-primary/10",
     imageBg: "bg-gradient-to-t from-primary/15 to-transparent dark:from-primary/20",
-    imageUrl: "/images/guesthouse.png",
+    imageUrl: assetPath("/images/guesthouse.png"),
   },
   {
     icon: CheckCircle,
@@ -19,7 +20,7 @@ const features = [
     description: <>직접 방문해 검증한, 믿고 머물 수 있는 <br className="sm:hidden" />게스트하우스만 소개합니다</>,
     className: "bg-muted/40 dark:bg-muted/10",
     imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
-    imageUrl: "/images/home.svg",
+    imageUrl: assetPath("/images/home.svg"),
   },
   {
     icon: PartyPopper,
@@ -27,7 +28,7 @@ const features = [
     description: <>게스트하우스의 다양한 파티와 이벤트를 <br className="sm:hidden" />한눈에 확인하고<br className="hidden sm:block" />참여해보세요</>,
     className: "bg-muted/40 dark:bg-muted/10",
     imageBg: "bg-gradient-to-t from-muted/60 to-transparent dark:from-muted/20",
-    imageUrl: "/images/contents.svg",
+    imageUrl: assetPath("/images/contents.svg"),
   },
 ]
 

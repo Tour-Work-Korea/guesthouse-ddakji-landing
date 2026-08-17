@@ -2,15 +2,16 @@ import type { Metadata } from 'next'
 import Script from 'next/script'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { assetPath, SITE_ORIGIN, SITE_URL } from '@/lib/site'
 import './globals.css'
 
 const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ddakji.kr'),
+  metadataBase: new URL(SITE_ORIGIN),
   alternates: {
-    canonical: '/',
+    canonical: SITE_URL,
   },
   title: '게딱지 - 게스트하우스 딱, 지금!',
   description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
@@ -21,7 +22,8 @@ export const metadata: Metadata = {
   openGraph: {
     title: '게딱지 - 게스트하우스 딱, 지금!',
     description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
-    url: 'https://ddakji.kr',
+    url: SITE_URL,
+    images: [`${SITE_URL}/opengraph-image`],
     siteName: '게딱지(Ddakji)',
     locale: 'ko_KR',
     type: 'website',
@@ -30,6 +32,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '게딱지 - 게스트하우스 딱, 지금!',
     description: '단순한 숙박이 아닌, 사람을 만나는 시작점으로. 지금 바로 게스트하우스를 찾고 예약하세요.',
+    images: [`${SITE_URL}/opengraph-image`],
   },
   robots: {
     index: true,
@@ -59,9 +62,9 @@ export const metadata: Metadata = {
     },
   },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/apple-icon.svg',
+    icon: assetPath('/favicon.svg'),
+    shortcut: assetPath('/favicon.svg'),
+    apple: assetPath('/apple-icon.png'),
   },
   generator: 'v0.app',
 }

@@ -5,6 +5,7 @@ import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
 import { useState } from "react"
+import { assetPath } from "@/lib/site"
 
 export function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -16,7 +17,7 @@ export function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center z-10">
             <Image
-              src="/images/logo.png"
+              src={assetPath("/images/logo.png")}
               alt="게딱지 로고"
               width={160}
               height={40}
