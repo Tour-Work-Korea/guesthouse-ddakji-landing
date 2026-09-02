@@ -393,7 +393,8 @@ summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
     ko.setAttribute('aria-pressed',l==='ko');en.setAttribute('aria-pressed',l==='en');}
   ko.addEventListener('click',function(){set('ko')});
   en.addEventListener('click',function(){set('en')});
-  if((navigator.language||'').slice(0,2)!=='ko') set('en');
+  if(document.body.classList.contains('en')||(navigator.language||'').slice(0,2)!=='ko') set('en');
+  else set('ko');
 
   var ov=document.getElementById('ov'),last=null;
   var config=window.LANGUAGE_EXCHANGE_CONFIG||{};
