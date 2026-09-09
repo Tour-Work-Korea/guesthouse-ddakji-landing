@@ -18,7 +18,12 @@ export async function POST(request: Request) {
   const reply = (error: string, status: number) => Response.json({ ok: false, error }, { status });
   const origin = request.headers.get('origin');
   try {
-    if (!origin || new URL(origin).host !== request.headers.get('host')) return reply('forbidden', 403);
+    // CloudFront forwards the request to info.ddakji.kr without the viewer Host.
+    // Accept the exact public site origins as well as same-origin previews/local use.
+    const publicOrigins = new Set(['https://ddakji.kr', 'https://www.ddakji.kr']);
+    if (!origin || (!publicOrigins.has(origin) && new URL(origin).host !== request.headers.get('host'))) {
+      return reply('forbidden', 403);
+    }
   } catch { return reply('forbidden', 403); }
   if (!request.headers.get('content-type')?.startsWith('application/json')) return reply('invalid', 415);
   const endpoint = process.env.MEETUP_REVIEW_SCRIPT_URL;
