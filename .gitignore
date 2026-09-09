@@ -5,3 +5,7 @@ out/
 # node
 node_modules/
 *.tsbuildinfo
+
+# Local secrets
+.env*
+!.env.example
