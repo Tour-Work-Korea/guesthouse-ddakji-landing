@@ -8,7 +8,7 @@ const schema = z.object({
     return !Number.isNaN(date.getTime()) && date.toISOString().slice(0, 10) === value;
   }),
   rating: z.number().int().min(1).max(5),
-  nickname: z.string().trim().max(40),
+  nickname: z.string().trim().min(1).max(40),
   review: z.string().trim().min(1).max(1000),
   consent: z.literal(true),
   website: z.string().max(0),
