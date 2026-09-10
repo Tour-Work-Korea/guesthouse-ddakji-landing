@@ -67,33 +67,90 @@ for(const link of document.querySelectorAll('[data-application]')){
   catch{const status=document.getElementById('application-status');status.hidden=false;status.textContent='Applications are temporarily unavailable. Please use the meetup details page. / 신청 링크를 불러오지 못했어요. 모임 안내 페이지를 이용해 주세요.'}
 }
 const $=id=>document.getElementById(id);
-const categories=[['all','All · 전체'],['ice','Warm up · 가볍게'],['culture','Culture · 문화'],['stories','Stories · 경험'],['choices','This or that · 취향']];
+const categories=[["all", "All · 전체"], ["culture", "Travel & culture · 여행·문화"], ["daily", "Everyday life · 일상·서로 알아가기"]];
 const questions=[
-['ice','What’s one small thing that made you smile today?','오늘 당신을 웃게 만든 작은 일은 뭐예요?'],
-['ice','How would you describe your week in three words?','이번 주를 세 단어로 표현한다면?'],
-['ice','What song have you had on repeat lately?','요즘 반복해서 듣는 노래가 있나요?'],
-['ice','What’s your ideal way to spend a free Sunday?','아무 일정 없는 일요일을 어떻게 보내고 싶어요?'],
-['ice','What food could you happily eat every day?','매일 먹어도 질리지 않을 음식은 뭐예요?'],
-['ice','What’s a place nearby you’d recommend to a new friend?','새 친구에게 추천하고 싶은 근처 장소가 있나요?'],
-['culture','What word in your language is hard to translate?','당신의 언어에서 번역하기 어려운 단어는 뭐예요?'],
-['culture','What surprised you about a place you visited?','여행한 곳에서 어떤 점이 의외였나요?'],
-['culture','How do people usually make new friends where you grew up?','당신이 자란 곳에서는 보통 어떻게 새 친구를 사귀나요?'],
-['culture','What comfort food reminds you of home?','집을 떠올리게 하는 음식은 뭐예요?'],
-['culture','What local custom would you explain to a first-time visitor?','처음 방문한 사람에게 알려주고 싶은 문화나 관습은 뭐예요?'],
-['culture','Teach us a casual greeting in a language you know.','당신이 아는 언어로 편한 인사말을 알려주세요.'],
-['stories','What hobby would you try if you had a free month?','한 달의 자유 시간이 생기면 어떤 취미에 도전하고 싶어요?'],
-['stories','Tell us about a time a stranger was kind to you.','낯선 사람에게 친절을 받았던 경험을 들려주세요.'],
-['stories','What’s something you tried for the first time recently?','최근 처음 해본 일이 있나요?'],
-['stories','What’s a tiny achievement you’re proud of?','작지만 뿌듯했던 성취는 뭐예요?'],
-['stories','What place would you love to visit again, and why?','다시 가보고 싶은 곳은 어디고, 이유는 뭐예요?'],
-['stories','What skill would you love to learn from someone here?','여기 있는 누군가에게 배우고 싶은 기술이 있나요?'],
-['choices','A planned trip or a spontaneous trip? Why?','계획적인 여행과 즉흥 여행 중 어떤 게 좋아요? 왜요?'],
-['choices','A cozy café or a lively night market?','아늑한 카페와 활기찬 야시장 중 어디가 좋아요?'],
-['choices','Learn through movies or through conversations?','영화로 배우기와 대화로 배우기 중 어느 쪽이 좋아요?'],
-['choices','Mountains or the sea for your next getaway?','다음 여행은 산과 바다 중 어디로 가고 싶어요?'],
-['choices','Cook together or try a new restaurant together?','함께 요리하기와 새 식당 가보기 중 어느 쪽이 좋아요?'],
-['choices','A superpower: speak every language or play every instrument?','모든 언어 말하기와 모든 악기 연주하기 중 갖고 싶은 능력은?']
+  [
+    "culture",
+    "Where would you like to visit in Korea?",
+    "한국에서 가보고 싶은 곳은?"
+  ],
+  [
+    "culture",
+    "What Korean food would you like to try?",
+    "먹어보고 싶은 한국 음식은?"
+  ],
+  [
+    "culture",
+    "What’s one thing you really want to do in Korea?",
+    "한국에서 꼭 해보고 싶은 것은?"
+  ],
+  [
+    "culture",
+    "Was there anything in Korea that felt unfamiliar to you?",
+    "한국에서 낯설었던 모습이 있다면?"
+  ],
+  [
+    "culture",
+    "What’s a must-try food or drink from a Korean convenience store?",
+    "한국 편의점에서 꼭 먹어봐야 할 것은?"
+  ],
+  [
+    "culture",
+    "What hidden-gem restaurant would you recommend that only locals know about?",
+    "현지인만 아는 맛집을 추천한다면?"
+  ],
+  [
+    "culture",
+    "What memes or cultural trends are popular in your country right now?",
+    "자국에서 유행하는 밈이나 문화는?"
+  ],
+  [
+    "culture",
+    "Which country have you enjoyed traveling in the most?",
+    "여행하기 가장 좋았던 나라는?"
+  ],
+  [
+    "daily",
+    "What’s your MBTI type?",
+    "MBTI가 어떻게 되세요?"
+  ],
+  [
+    "daily",
+    "What do you do for work?",
+    "평소에 어떤 일 하고 있어요?"
+  ],
+  [
+    "daily",
+    "What hobbies or activities do you enjoy?",
+    "좋아하는 취미나 활동은?"
+  ],
+  [
+    "daily",
+    "What do you usually do on weekends?",
+    "주말에 보통 뭐 해요?"
+  ],
+  [
+    "daily",
+    "What was the best thing that happened to you this past week?",
+    "지난 일주일 동안 가장 좋았던 일은?"
+  ],
+  [
+    "daily",
+    "Do you have any pets? What pet would you like to have?",
+    "반려동물 있어요? 뭘 키우고 싶어요?"
+  ],
+  [
+    "daily",
+    "Have you been learning anything or started something new lately?",
+    "요즘 배우거나 새로 시작한 것 있어요?"
+  ],
+  [
+    "daily",
+    "Do you cook often? What dish are you good at making?",
+    "요리 자주 해요? 자신 있는 메뉴는?"
+  ]
 ];
+
 let category='all',deck=[],history=[],position=-1;
 function shuffle(items){for(let i=items.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[items[i],items[j]]=[items[j],items[i]]}return items}
 function showQuestion(){const index=history[position],q=questions[index];$('question').replaceChildren();const meta=document.createElement('div');meta.className='card-meta';meta.textContent=categories.find(c=>c[0]===q[0])[1]+' / '+String(index+1).padStart(2,'0');const title=document.createElement('h2');title.textContent=q[1];const ko=document.createElement('div');ko.className='translation';ko.lang='ko';ko.textContent=q[2];$('question').append(meta,title,ko);$('previous-question').disabled=position<=0}
