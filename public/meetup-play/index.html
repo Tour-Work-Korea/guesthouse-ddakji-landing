@@ -226,5 +226,6 @@ $('download').onclick=()=>{const cell=value=>'"'+String(value).replace(/^[=+@\-\
 try{const raw=localStorage.getItem(key);if(raw){const data=JSON.parse(raw);if(!data||!Array.isArray(data.people)||!Array.isArray(data.prizes)||!Array.isArray(data.winners)||!data.people.every(p=>p&&typeof p.number==='string')||!data.prizes.every(p=>p&&typeof p.id==='string'&&typeof p.name==='string')||!data.winners.every(w=>w&&typeof w.number==='string'&&typeof w.prize==='string'&&typeof w.prizeId==='string'))throw Error();state={people:data.people.map(p=>({number:p.number})),prizes:data.prizes,winners:data.winners.map(w=>({number:w.number,prize:w.prize,prizeId:w.prizeId}))};save();$('people').value=state.people.map(p=>p.number).join('\n');$('prizes').value=state.prizes.map(p=>p.name).join('\n')}}catch{$('error').textContent='Could not restore saved data. Please enter your list again. / 저장된 데이터를 불러오지 못했어요. 명단을 다시 입력해 주세요.'}
 render();if(state.people.length)ready();
 
+
 })();
 </script></body></html>

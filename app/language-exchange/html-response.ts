@@ -20,8 +20,8 @@ export async function languageExchangeResponse(language: "ko" | "en" = "ko") {
         'content="https://ddakji.kr/about/language-exchange/en"',
       )
       .replaceAll(
-        "한국인과 외국인이 문화와 일상을 나누는 이태원 언어교환 모임입니다.",
-        "A language exchange meetup in Itaewon where Koreans and internationals share cultures and everyday stories.",
+        "홍대에서 치킨을 함께 먹으며 한국어와 영어로 대화하는 Koin × Ddakji 언어교환 모임입니다.",
+        "Join Koin × Ddakji in Hongdae for chicken and conversation in Korean and English.",
       )
       .replace('content="ko_KR"', 'content="en_US"');
   }
