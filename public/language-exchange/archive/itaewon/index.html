@@ -212,6 +212,10 @@ summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
   .close{min-height:42px;margin-top:10px}
 }
 @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+
+/* Participant voices from the Itaewon gathering. */
+.reviews-heading{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:28px}.reviews-heading h2{margin-bottom:10px}.reviews-heading h3{font:500 clamp(30px,5vw,42px)/1.15 'Playfair Display',Georgia,serif;color:var(--cream);margin:0}.reviews-score{text-align:right;flex-shrink:0}.reviews-score strong{font:500 38px/1 'Playfair Display',Georgia,serif;color:var(--gold)}.reviews-score small{font-size:14px;color:var(--muted)}.reviews-score p{font-size:12px;margin-top:8px;color:var(--muted)}.review-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.review-card{margin:0;padding:25px;border:1px solid var(--line);background:rgba(240,234,224,.025);border-radius:14px;display:flex;flex-direction:column;min-width:0}.review-card.featured{grid-column:1/-1;background:rgba(239,215,155,.065);border-color:rgba(239,215,155,.28);padding:32px}.review-rating{font-size:14px;letter-spacing:3px;color:var(--gold);margin-bottom:16px}.review-card blockquote{font-size:16px;line-height:1.85;color:var(--cream);margin:0 0 24px;overflow-wrap:anywhere}.review-card.featured blockquote{font-size:20px;line-height:1.8}.review-card figcaption{margin-top:auto;font-size:12px;color:var(--muted);letter-spacing:.03em}.reviews-caption{font-size:12px;color:var(--muted);line-height:1.7;margin-top:18px}
+@media(max-width:600px){.reviews-heading{gap:12px;align-items:center}.reviews-heading h3{font-size:30px}.reviews-score strong{font-size:32px}.review-grid{grid-template-columns:1fr;gap:12px}.review-card,.review-card.featured{padding:22px}.review-card.featured blockquote{font-size:18px}.review-card blockquote{font-size:15px}.reviews-score p{font-size:11px}}
 </style>
 </head>
 <body class="ko">
@@ -277,6 +281,20 @@ summary:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
       <p class="b" data-ko>네 명이 한 테이블에 앉고, 라운드가 끝나면 자리를 바꿉니다. 라운드마다 쓰는 언어가 달라지고, 테이블에는 대화 주제 카드가 놓여 있습니다. 진행자가 자리와 시간을 관리하니 혼자 오셔도 어색할 일은 없습니다.</p>
       <p class="b" data-en>Internationals in Seoul often have few natural opportunities to meet Koreans, while Koreans have few chances to speak English. We created <span class="hl">a relaxed place to practise languages, share cultures and everyday stories, and make genuine connections.</span></p>
       <p class="b" data-en>You sit in fours and change seats between rounds. Each round runs in a different language, and every table has conversation prompts on it. A host handles the seating and the clock, so coming alone works fine.</p>
+    </section>
+
+
+    <section id="reviews" aria-label="참가자 후기 / Participant reviews">
+      <div class="reviews-heading"><div><h2 data-ko>함께한 사람들의 이야기</h2><h2 data-en>VOICES FROM THE EVENING</h2><h3 class="serif">After the hello.</h3></div><div class="reviews-score"><strong>4.8</strong><small> / 5</small><p><span data-ko>참가자 후기 6개</span><span data-en>6 participant reviews</span></p></div></div>
+      <div class="review-grid">
+        <figure class="review-card featured"><div class="review-rating" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></div><blockquote>일상에서 외국인들과 만날 기회가 많이 없었는데 영어로 이야기할 수 있었어서 좋았어요!!<br>그리고 모두 친구가 되는 느낌이라서 좋아용 다음에 또 열리면 무조건 참석할게욤</blockquote><figcaption>Jade</figcaption></figure>
+        <figure class="review-card"><div class="review-rating" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></div><blockquote>It was perfect</blockquote><figcaption>Mdidn</figcaption></figure>
+        <figure class="review-card"><div class="review-rating" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></div><blockquote>영어로 대화할 수 있는 기회여서 좋았어요</blockquote><figcaption>Ria</figcaption></figure>
+        <figure class="review-card"><div class="review-rating" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></div><blockquote>Good to talk with people.</blockquote><figcaption>omerglbs</figcaption></figure>
+        <figure class="review-card"><div class="review-rating" role="img" aria-label="4 / 5"><span aria-hidden="true">★★★★☆</span></div><blockquote>I had a fun time.<br>이거야</blockquote><figcaption>스티븐</figcaption></figure>
+        <figure class="review-card featured"><div class="review-rating" role="img" aria-label="5 / 5"><span aria-hidden="true">★★★★★</span></div><blockquote>최고였습니다<br>우연한 기회에 참여하게 됐는데, 외국인 분들과 너무 재밌게 놀다 왔네요...<br>대화 소재가 떨어지지 않도록 책상에 화제거리 키워드들을 놓아주셔서 2시간 동안 대화가 끊이질 않았습니다.<br>다음에 하면 꼭 다시 참여하겠습니다.<br>기다릴께요.</blockquote><figcaption>JuHoon</figcaption></figure>
+      </div>
+      <p class="reviews-caption" data-ko>지난 이태원 모임에서 보내주신 후기입니다.</p><p class="reviews-caption" data-en>Reviews shared after our Itaewon gathering, shown in their original language.</p>
     </section>
 
     <section>
