@@ -55,6 +55,10 @@ body{font-size:16px}.brand span{font-size:11px;letter-spacing:1px;line-height:1.
 .home-review:first-child blockquote{font-size:15px;line-height:1.65;letter-spacing:-.2px;margin-bottom:18px}
 @media(max-width:700px){.home-review:first-child blockquote{font-size:14px;line-height:1.65}}
 .meetup-card .meetup-coming-note{margin-top:12px;font-size:12px;color:#777}
+
+/* A small thank-you note after feedback has been saved. */
+body.review-success-open{overflow:hidden}.review-success{width:calc(100% - 36px);max-width:480px;max-height:calc(100dvh - 36px);padding:0;border:1px solid #1113;background:#f5f5f2;color:var(--ink);box-shadow:0 24px 80px #0003;text-align:center;overflow:auto}.review-success::backdrop{background:#1118;backdrop-filter:blur(4px)}.review-success-content{position:relative;padding:52px 32px 32px}.review-success-close{position:absolute;top:10px;right:10px;display:grid;place-items:center;width:44px;height:44px;padding:0;background:transparent;color:var(--ink);border:0;font-size:28px;line-height:1}.review-success-close:hover{background:#1111}.review-success-mark{display:grid;place-items:center;width:56px;height:56px;margin:0 auto 24px;border:1px solid #111;border-radius:50%}.review-success-mark svg{width:26px;height:26px}.review-success .eyebrow{font-size:11px;letter-spacing:1.3px;margin-bottom:16px}.review-success h2{font-size:34px;line-height:1.15;letter-spacing:-1.2px;margin:0 0 22px}.review-success h2 .ko{font-size:21px;font-weight:500;line-height:1.5;margin-top:12px;word-break:keep-all}.review-success p{font-size:15px;line-height:1.8;color:var(--muted);margin:0 0 28px}.review-success p .ko{font-size:16px;line-height:1.8;margin-top:14px;word-break:keep-all}.review-success .primary{width:100%;min-height:50px}#review-status:focus{outline:none}
+@media(max-width:480px){.review-success-content{padding:48px 22px 24px}.review-success h2{font-size:30px}.review-success h2 .ko{font-size:20px}}
 </style></head><body>
 <header><a class="brand" href="#home">K—meetup<span>LANGUAGE EXCHANGE / SEOUL</span></a></header><main>
 <section id="home" class="view"><div class="poster-home"><div class="poster-notes"><p>MEET IN<br>SEOUL.<br><span lang="ko">언어를 넘어 만나는 우리.</span></p><p>NEW PEOPLE.<br>REAL CONVERSATIONS.<br>A SHARED EVENING.</p></div><div class="poster-title"><h1>IT STARTS<br>WITH HELLO.</h1></div><div class="poster-photo has-photo"><img class="meetup-memory" src="/about/language-exchange/chicken-chat.png" alt="Koin × Ddakji Chicken & Chat — 홍대 언어교환 포스터" fetchpriority="high" width="1080" height="1350"></div><div class="poster-bottom"><span>MEET.<br>TALK.</span><a href="#questions">START TALKING ↗<small>질문으로 시작하기</small></a><p>No perfect words needed.<br>Just say hello.<br><span lang="ko">완벽하게 말하지 않아도 괜찮아요.</span></p></div></div>
@@ -106,6 +110,16 @@ body{font-size:16px}.brand span{font-size:11px;letter-spacing:1px;line-height:1.
 <label for="prize-select">Choose the next gift · 이번에 추첨할 상품</label><select id="prize-select" disabled><option>Add gifts to get started · 상품을 등록해 주세요</option></select>
 <div class="panel history"><div class="history-top"><h2>The lucky ones <small lang="ko">행운의 주인공들</small></h2><button class="ghost" id="download" disabled>Export CSV ↓</button></div><div id="results"><p class="empty">Your number could be here. · 첫 당첨자를 기다리고 있어요.</p></div></div>
 </section></div></section></main><footer>K-MEETUP / GOOD PEOPLE. GOOD CONVERSATIONS.</footer>
+<dialog id="review-success" class="review-success" aria-labelledby="review-success-title" aria-describedby="review-success-description">
+<div class="review-success-content">
+<button id="review-success-close" class="review-success-close" type="button" aria-label="Close · 닫기"><span aria-hidden="true">×</span></button>
+<div class="review-success-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4 10-10"/></svg></div>
+<div class="eyebrow">UNTIL NEXT TIME / 다음 만남까지</div>
+<h2 id="review-success-title">Feedback received.<span class="ko" lang="ko">후기가 남겨졌어요.</span></h2>
+<p id="review-success-description">Thanks for joining us.<br>We’d love to see you at our next meetup!<span class="ko" lang="ko">함께해 주셔서 감사해요.<br>다음 모임에도 꼭 참여해 주세요!</span></p>
+<button id="review-success-confirm" class="primary" type="button" autofocus>Got it · 확인</button>
+</div>
+</dialog>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
@@ -215,6 +229,14 @@ function renderQuiz(){const root=$('quiz-content');root.replaceChildren();if(!st
 function scores(){return ['EI','SN','TF','JP'].map(pair=>{let left=0,right=0;quiz.forEach((q,i)=>{if(q[0]===pair){if(answers[i]===0)left++;if(answers[i]===1)right++}});return {pair,left,right,letter:left===right?'X':left>right?pair[0]:pair[1]}})}
 function renderResult(){const result=scores(),type=result.map(r=>r.letter).join('');const root=$('quiz-content');root.innerHTML='<div class="result"><div class="eyebrow" style="color:#343047">YOUR CONVERSATION STARTER</div><div class="type"></div><h2>A snapshot, not a box.<span class="ko" lang="ko">오늘의 나를 가볍게 알아봐요.</span></h2><p>Compare with a friend: where are you similar, and where are you different?<span class="ko" lang="ko">친구와 비교해 보세요. 어떤 점이 비슷하고, 어떤 점이 다른가요?</span></p></div>';$('quiz-content').querySelector('.type').textContent=type;const labels={EI:['Outward / 외향','Inward / 내향'],SN:['Concrete / 구체적','Possibilities / 가능성'],TF:['Logic / 논리','Values / 가치'],JP:['Structure / 계획','Flexibility / 유연성']};for(const r of result){const row=document.createElement('div');row.className='dimension';const title=document.createElement('strong');title.textContent=r.letter==='X'?`${r.pair[0]} / ${r.pair[1]} — Balanced · 동점`:`${r.letter} — ${labels[r.pair][r.left>r.right?0:1]}`;const detail=document.createElement('div');detail.textContent=`${labels[r.pair][0]} ${r.left} : ${r.right} ${labels[r.pair][1]}`;row.append(title,detail);root.firstChild.append(row)}const note=document.createElement('p');note.textContent='X means a tie, not an official type. This short quiz is just for fun. / X는 동점이며 공식 유형이 아니에요. 짧은 재미용 퀴즈로 봐주세요.';root.firstChild.append(note);const actions=document.createElement('div');actions.className='actions';actions.append(button('Try again · 다시 하기','primary',()=>{answers=[];step=0;started=false;renderQuiz()}),button('Talk about it ↗ · 질문 보기','ghost',()=>{location.hash='questions'}));root.append(actions)}
 
+const reviewSuccess=$('review-success');
+$('review-status').tabIndex=-1;
+function showReviewSuccess(){reviewSuccess.showModal();document.body.classList.add('review-success-open')}
+$('review-success-close').onclick=()=>reviewSuccess.close();
+$('review-success-confirm').onclick=()=>reviewSuccess.close();
+reviewSuccess.addEventListener('click',event=>{if(event.target!==reviewSuccess)return;const bounds=reviewSuccess.getBoundingClientRect();if(event.clientX<bounds.left||event.clientX>bounds.right||event.clientY<bounds.top||event.clientY>bounds.bottom)reviewSuccess.close()});
+reviewSuccess.addEventListener('close',()=>{document.body.classList.remove('review-success-open');$('review-status').focus({preventScroll:true})});
+
 let reviewSubmissionId=crypto.randomUUID();
 $('review-date').value=new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Seoul',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date());
 $('review-form').addEventListener('input',()=>{reviewSubmissionId=crypto.randomUUID()});
@@ -224,7 +246,7 @@ $('review-form').addEventListener('submit',async event=>{
  const review=$('review-text').value.trim();if(!review){$('review-status').textContent='Please write a short review. / 후기를 입력해 주세요.';return;}
  const payload={submissionId:reviewSubmissionId,eventDate:$('review-date').value,rating:Number($('review-rating').value),nickname,review,consent:$('review-consent').checked,website:$('review-website').value};
  fields.disabled=true;$('review-status').textContent='Sending… / 전송 중…';
- try{const response=await fetch('/about/api/meetup-review',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(25000)});const data=await response.json();if(!response.ok||data.ok!==true){$('review-status').textContent=response.status===503?'Reviews are not connected yet. Please try again later. / 후기 저장 연결을 준비 중이에요. 잠시 후 다시 이용해 주세요.':'Could not confirm saving. Please retry; your text is still here. / 저장을 확인하지 못했어요. 내용은 유지되니 다시 시도해 주세요.';fields.disabled=false;return;}$('review-status').textContent='Thank you! Your feedback was saved. / 감사합니다! 후기가 저장됐어요.';}
+ try{const response=await fetch('/about/api/meetup-review',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:AbortSignal.timeout(25000)});const data=await response.json();if(!response.ok||data.ok!==true){$('review-status').textContent=response.status===503?'Reviews are not connected yet. Please try again later. / 후기 저장 연결을 준비 중이에요. 잠시 후 다시 이용해 주세요.':'Could not confirm saving. Please retry; your text is still here. / 저장을 확인하지 못했어요. 내용은 유지되니 다시 시도해 주세요.';fields.disabled=false;return;}$('review-status').textContent='Thank you! Your feedback was saved. / 감사합니다! 후기가 저장됐어요.';showReviewSuccess();}
  catch{$('review-status').textContent='Could not confirm saving. Please retry. / 저장을 확인하지 못했어요. 다시 시도해 주세요.';fields.disabled=false;}
 });
 
