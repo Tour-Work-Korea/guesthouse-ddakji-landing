@@ -43,7 +43,7 @@
 .past-event + .past-event{margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}.past-event h3{font-size:16px;font-weight:500;margin-bottom:18px}.past-event>.text-link{font-size:14px;color:var(--muted)}.past-gallery{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:20px;align-items:center;margin-bottom:20px}.past-gallery figure{margin:0;width:100%;min-width:0}.past-photo img{width:100%;height:auto;border-radius:8px}.past-photo a{display:block}.past-gallery figcaption{margin-top:10px;font-size:12px;line-height:1.7;color:var(--muted)}.past-gallery video{max-height:440px}.gallery-hint{display:none}
 @media(max-width:640px){.past-event h3{font-size:15px;margin-bottom:12px}.gallery-hint{display:block;color:var(--muted);font-size:12px;margin-bottom:12px}.past-gallery{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;align-items:start;padding:3px 0 12px}.past-gallery figure{flex:0 0 88%;scroll-snap-align:start}.past-gallery video{max-height:400px}.past-event>.text-link{font-size:13px}}
 .past-gallery{scrollbar-width:thin;scrollbar-color:#696957 transparent}.past-gallery::-webkit-scrollbar{height:4px}.past-gallery::-webkit-scrollbar-track{background:transparent}.past-gallery::-webkit-scrollbar-thumb{background:#696957;border-radius:4px}
-.past-gallery--three{grid-template-columns:repeat(3,minmax(0,1fr));align-items:start;gap:14px}.past-gallery--three .past-photo img,.past-gallery--three video{width:100%;height:auto;aspect-ratio:3/4;max-height:none;object-fit:contain;background:#111;border:1px solid var(--line);border-radius:8px}
+.past-gallery--chicken{grid-template-columns:repeat(4,minmax(0,1fr));align-items:start;gap:14px}.past-gallery--chicken .past-photo img,.past-gallery--chicken video{width:100%;height:auto;aspect-ratio:3/4;max-height:none;object-fit:contain;background:#111;border:1px solid var(--line);border-radius:8px}
 </style>
 </head>
 <body class="ko">
@@ -106,6 +106,41 @@
   </section>
   <section class="past-section" aria-labelledby="past-title">
     <h2 id="past-title"><span data-ko>지난 모임</span><span data-en>Past meetups</span></h2>
+    <article class="past-event" aria-labelledby="hongdae-event-title">
+      <h3 id="hongdae-event-title"><span data-ko>10월 10일 · 홍대 치킨 언어교환</span><span data-en>10 October · Chicken &amp; Chat in Hongdae</span></h3>
+      <p class="gallery-hint"><span data-ko>사진 3장 · 영상 1개 →</span><span data-en>3 photos · 1 video →</span></p>
+      <div class="past-gallery past-gallery--chicken" role="region" aria-labelledby="hongdae-event-title" tabindex="0">
+        <figure class="past-photo">
+          <a href="/about/language-exchange/media/hongdae-chicken-chat.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="/about/language-exchange/media/hongdae-chicken-chat.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-ko alt="홍대 치킨 언어교환에서 테이블에 둘러앉아 대화하는 참가자들 · 사진 크게 보기">
+            <img src="/about/language-exchange/media/hongdae-chicken-chat.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-en alt="Participants chatting around tables at Chicken &amp; Chat in Hongdae · Open larger photo">
+          </a>
+          <figcaption><span data-ko>치킨과 함께 나눈 이야기 ↗</span><span data-en>Conversations over chicken ↗</span></figcaption>
+        </figure>
+        <figure class="past-photo">
+          <a href="/about/language-exchange/media/hongdae-chicken-table.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="/about/language-exchange/media/hongdae-chicken-table.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-ko alt="홍대 언어교환 모임에서 함께 먹은 다양한 치킨 · 사진 크게 보기">
+            <img src="/about/language-exchange/media/hongdae-chicken-table.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-en alt="A selection of chicken shared at our Hongdae language exchange · Open larger photo">
+          </a>
+          <figcaption><span data-ko>함께 즐긴 치킨 ↗</span><span data-en>Chicken to share ↗</span></figcaption>
+        </figure>
+        <figure class="past-photo">
+          <a href="/about/language-exchange/media/hongdae-chicken-venue.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="/about/language-exchange/media/hongdae-chicken-venue.jpg" width="901" height="1600" loading="lazy" decoding="async" data-ko alt="홍대 치킨 모임 장소에 붙어 있는 Chicken &amp; Chat 포스터 · 사진 크게 보기">
+            <img src="/about/language-exchange/media/hongdae-chicken-venue.jpg" width="901" height="1600" loading="lazy" decoding="async" data-en alt="Chicken &amp; Chat posters displayed at our Hongdae venue · Open larger photo">
+          </a>
+          <figcaption><span data-ko>치킨 모임이 열린 공간 ↗</span><span data-en>Our Chicken &amp; Chat venue ↗</span></figcaption>
+        </figure>
+      <figure class="past-video">
+        <video controls playsinline preload="none" poster="/about/language-exchange/media/party-preview.jpg" width="720" height="1280" aria-labelledby="past-video-caption">
+          <source src="/about/language-exchange/media/party-preview.mp4" type="video/mp4">
+          <a href="/about/language-exchange/media/party-preview.mp4"><span data-ko>홍대 모임 영상 보기</span><span data-en>Watch the Hongdae meetup video</span></a>
+        </video>
+        <figcaption id="past-video-caption"><span data-ko>홍대 치킨 언어교환</span><span data-en>Chicken &amp; Chat in Hongdae</span></figcaption>
+      </figure>
+      </div>
+      <a class="text-link" href="/about/language-exchange"><span data-ko>홍대 모임 자세히 보기 →</span><span data-en>More about the Hongdae meetup →</span></a>
+    </article>
     <article class="past-event" aria-labelledby="itaewon-event-title">
       <h3 id="itaewon-event-title"><span data-ko>9월 10일 · 이태원 언어교환</span><span data-en>10 September · Itaewon language exchange</span></h3>
       <p class="gallery-hint"><span data-ko>옆으로 넘기면 영상도 볼 수 있어요 →</span><span data-en>Swipe to see the video too →</span></p>
@@ -126,34 +161,6 @@
         </figure>
       </div>
       <a class="text-link" href="/about/language-exchange/archive/itaewon"><span data-ko>이태원 모임 자세히 보기 →</span><span data-en>More about the Itaewon meetup →</span></a>
-    </article>
-    <article class="past-event" aria-labelledby="hongdae-event-title">
-      <h3 id="hongdae-event-title"><span data-ko>10월 10일 · 홍대 치킨 언어교환</span><span data-en>10 October · Chicken &amp; Chat in Hongdae</span></h3>
-      <p class="gallery-hint"><span data-ko>사진 2장 · 영상 1개 →</span><span data-en>2 photos · 1 video →</span></p>
-      <div class="past-gallery past-gallery--three" role="region" aria-labelledby="hongdae-event-title" tabindex="0">
-        <figure class="past-photo">
-          <a href="/about/language-exchange/media/hongdae-chicken-chat.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="/about/language-exchange/media/hongdae-chicken-chat.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-ko alt="홍대 치킨 언어교환에서 테이블에 둘러앉아 대화하는 참가자들 · 사진 크게 보기">
-            <img src="/about/language-exchange/media/hongdae-chicken-chat.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-en alt="Participants chatting around tables at Chicken &amp; Chat in Hongdae · Open larger photo">
-          </a>
-          <figcaption><span data-ko>치킨과 함께 나눈 이야기 ↗</span><span data-en>Conversations over chicken ↗</span></figcaption>
-        </figure>
-        <figure class="past-photo">
-          <a href="/about/language-exchange/media/hongdae-chicken-table.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="/about/language-exchange/media/hongdae-chicken-table.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-ko alt="홍대 언어교환 모임에서 함께 먹은 다양한 치킨 · 사진 크게 보기">
-            <img src="/about/language-exchange/media/hongdae-chicken-table.jpg" width="1200" height="1600" loading="lazy" decoding="async" data-en alt="A selection of chicken shared at our Hongdae language exchange · Open larger photo">
-          </a>
-          <figcaption><span data-ko>함께 즐긴 치킨 ↗</span><span data-en>Chicken to share ↗</span></figcaption>
-        </figure>
-      <figure class="past-video">
-        <video controls playsinline preload="none" poster="/about/language-exchange/media/party-preview.jpg" width="720" height="1280" aria-labelledby="past-video-caption">
-          <source src="/about/language-exchange/media/party-preview.mp4" type="video/mp4">
-          <a href="/about/language-exchange/media/party-preview.mp4"><span data-ko>홍대 모임 영상 보기</span><span data-en>Watch the Hongdae meetup video</span></a>
-        </video>
-        <figcaption id="past-video-caption"><span data-ko>홍대 치킨 언어교환</span><span data-en>Chicken &amp; Chat in Hongdae</span></figcaption>
-      </figure>
-      </div>
-      <a class="text-link" href="/about/language-exchange"><span data-ko>홍대 모임 자세히 보기 →</span><span data-en>More about the Hongdae meetup →</span></a>
     </article>
   </section>
   <div class="end">
